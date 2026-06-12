@@ -3,99 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enchant PEP STORE - Simple E-Commerce</title>
+    <title>Enchant PEP STORE | Premium E-Commerce</title>
     <style>
-        /* CSS for simple styling */
-        body {
-            font-family: Arial, sans-serif;
+        /* Universal Reset */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            overflow: hidden;
-        }
-        .product {
-            background: #fff;
-            border: #ccc 1px solid;
-            padding: 20px;
-            margin-bottom: 20px;
-            float: left;
-            width: 30%;
-            margin-right: 3%;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* Premium Header Styling */
+        header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #f1c40f; /* Golden Color */
+        }
+
+        .cart-btn {
+            background-color: #f1c40f;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover {
+            background-color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
             text-align: center;
+            padding: 20px;
         }
-        .product:last-child {
-            margin-right: 0;
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .product h3 {
-            margin-top: 0;
+
+        /* Products Section */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .product img {
-            max-width: 100%;
-            height: auto;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #f1c40f;
+            margin: 10px auto 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Modern Product Card */
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background-color: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .product-info .price {
+            font-size: 18px;
+            color: #e74c3c;
+            font-weight: 700;
             margin-bottom: 15px;
         }
-        .product p {
-            font-weight: bold;
-            color: #333;
-        }
-        .button {
-            background-color: #5cb85c;
+
+        .add-btn {
+            background-color: #1a1a1a;
             color: white;
-            padding: 10px 20px;
             border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+            transition: 0.3s;
         }
-        .button:hover {
-            background-color: #449d44;
+
+        .add-btn:hover {
+            background-color: #f1c40f;
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header / Navbar -->
     <header>
-        <div class="container">
-            <h1>Enchant PEP STORE</h1>
-        </div>
+        <div class="logo">Enchant PEP STORE</div>
+        <button class="cart-btn" onclick="viewCart()">Cart (0)</button>
     </header>
 
-    <div class="container">
-        <h2>Welcome to Our Store!</h2>
+    <!-- Hero Banner -->
+    <div class="hero">
+        <h2>Welcome to Enchant PEP STORE</h2>
+        <p>Discover Premium Products & Unmatched Quality</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <h3 class="section-title">Featured Products</h3>
         
-        <div class="product">
-            <h3>Product 1</h3>
-            <img src="https://via.placeholder.com/300x200" alt="Product 1">
-            <p>PKR 1000</p>
-            <button class="button">Add to Cart</button>
-        </div>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">PRODUCT IMAGE 1</div>
+                <div class="product-info">
+                    <h3>Premium Item One</h3>
+                    <p class="price">Rs. 2,500</p>
+                    <button class="add-btn" onclick="addToCart('Item One')">Add to Cart</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <h3>Product 2</h3>
-            <img src="https://via.placeholder.com/300x200" alt="Product 2">
-            <p>PKR 2000</p>
-            <button class="button">Add to Cart</button>
-        </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">PRODUCT IMAGE 2</div>
+                <div class="product-info">
+                    <h3>Exclusive Item Two</h3>
+                    <p class="price">Rs. 4,200</p>
+                    <button class="add-btn" onclick="addToCart('Item Two')">Add to Cart</button>
+                </div>
+            </div>
 
-        <div class="product">
-            <h3>Product 3</h3>
-            <img src="https://via.placeholder.com/300x200" alt="Product 3">
-            <p>PKR 3000</p>
-            <button class="button">Add to Cart</button>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">PRODUCT IMAGE 3</div>
+                <div class="product-info">
+                    <h3>Luxury Item Three</h3>
+                    <p class="price">Rs. 1,800</p>
+                    <button class="add-btn" onclick="addToCart('Item Three')">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Enchant PEP STORE. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple Dynamic JavaScript Functions
+        let cartCount = 0;
+
+        function addToCart(itemName) {
+            cartCount++;
+            document.querySelector('.cart-btn').innerText = "Cart (" + cartCount + ")";
+            alert(itemName + " has been added to your cart!");
+        }
+
+        function viewCart() {
+            alert("You have " + cartCount + " items in your cart.");
+        }
+    </script>
 </body>
 </html>
