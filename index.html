@@ -3,19 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Store</title>
+    <title>Enchant PEP STORE - Simple E-Commerce</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background: #f4f4f4; padding: 50px; }
-        .product { background: white; padding: 20px; display: inline-block; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        button { background: green; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        /* CSS for simple styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .product {
+            background: #fff;
+            border: #ccc 1px solid;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: left;
+            width: 30%;
+            margin-right: 3%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .product:last-child {
+            margin-right: 0;
+        }
+        .product h3 {
+            margin-top: 0;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .product p {
+            font-weight: bold;
+            color: #333;
+        }
+        .button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #449d44;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My New E-Commerce Shop</h1>
-    <div class="product">
-        <h2>Awesome T-Shirt</h2>
-        <p>Price: $20</p>
-        <button onclick="alert('Item added!')">Buy Now</button>
+    <header>
+        <div class="container">
+            <h1>Enchant PEP STORE</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Welcome to Our Store!</h2>
+        
+        <div class="product">
+            <h3>Product 1</h3>
+            <img src="https://via.placeholder.com/300x200" alt="Product 1">
+            <p>PKR 1000</p>
+            <button class="button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Product 2</h3>
+            <img src="https://via.placeholder.com/300x200" alt="Product 2">
+            <p>PKR 2000</p>
+            <button class="button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Product 3</h3>
+            <img src="https://via.placeholder.com/300x200" alt="Product 3">
+            <p>PKR 3000</p>
+            <button class="button">Add to Cart</button>
+        </div>
     </div>
 </body>
 </html>
